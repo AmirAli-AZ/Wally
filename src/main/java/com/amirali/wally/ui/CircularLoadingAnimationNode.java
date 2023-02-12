@@ -22,6 +22,7 @@ public class CircularLoadingAnimationNode extends HBox {
             getChildren().add(circle);
         }
         setSpacing(3);
+        play();
     }
 
     public CircularLoadingAnimationNode(Color color, Duration duration) {
@@ -36,7 +37,7 @@ public class CircularLoadingAnimationNode extends HBox {
         this(Color.WHITE, Duration.millis(600));
     }
 
-    public void play() {
+    private void play() {
         var t = new Thread(() -> {
             for (int i = 0; i < getChildren().size(); i++) {
                 var animation = new FadeTransition(durationProperty.get(), getChildren().get(i));

@@ -49,7 +49,6 @@ public class SplashScreen extends Stage {
         root.setCenter(center);
 
         var loadingAnimationNode = new CircularLoadingAnimationNode(Color.WHITE);
-        loadingAnimationNode.play();
         var bottom = new HBox(loadingAnimationNode);
         bottom.setAlignment(Pos.CENTER);
         bottom.setPadding(new Insets(8));

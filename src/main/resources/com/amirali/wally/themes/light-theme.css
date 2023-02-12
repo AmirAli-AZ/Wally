@@ -271,3 +271,7 @@
     -fx-border-radius: 180;
 }
 
+#wallpapers-loading Circle {
+    -fx-fill: gray;
+}
+
