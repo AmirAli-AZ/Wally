@@ -32,12 +32,25 @@ application {
 javafx {
     version = '17.0.6'
     modules = ['javafx.controls', 'javafx.fxml']
+    configuration = 'compileOnly'
 }
 
 dependencies {
     implementation 'org.kordamp.ikonli:ikonli-javafx:12.3.1'
     implementation 'org.kordamp.ikonli:ikonli-fontawesome-pack:12.3.1'
     implementation 'org.mongodb:mongo-java-driver:3.12.11'
+
+    implementation 'org.openjfx:javafx-controls:17.0.6:linux'
+    implementation 'org.openjfx:javafx-controls:17.0.6:win'
+
+    implementation 'org.openjfx:javafx-fxml:17.0.6:linux'
+    implementation 'org.openjfx:javafx-fxml:17.0.6:win'
+
+    implementation 'org.openjfx:javafx-graphics:17.0.6:linux'
+    implementation 'org.openjfx:javafx-graphics:17.0.6:win'
+
+    implementation 'org.openjfx:javafx-base:17.0.6:linux'
+    implementation 'org.openjfx:javafx-base:17.0.6:win'
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
