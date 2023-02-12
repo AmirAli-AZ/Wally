@@ -23,12 +23,10 @@ public class PageFactory implements Callback<Integer, Node> {
         }
 
         var thread = new Thread(() -> {
+            Platform.runLater(() -> listview.getItems().clear());
             var index = param * 10;
             var wallpapers = DBManager.getInstance().getWallpapers(filter, index, 10);
-            Platform.runLater(() -> {
-                listview.getItems().clear();
-                listview.getItems().addAll(wallpapers);
-            });
+            Platform.runLater(() -> listview.getItems().addAll(wallpapers));
             setFilter(null);
         });
         thread.setDaemon(true);
