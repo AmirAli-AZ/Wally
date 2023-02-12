@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<StackPane fx:id="root" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: rgba(0, 0, 0, 0.4);" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.amirali.wally.ui.controllers.ImageViewerController">
+   <children>
+      <ImageView fx:id="imageview" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER" />
+      <HBox fx:id="hbox" maxHeight="-Infinity" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: linear-gradient(to top, transparent, rgba(0, 0, 0, 0.8));" StackPane.alignment="BOTTOM_CENTER">
+         <children>
+            <ScrollPane fitToHeight="true" fitToWidth="true" HBox.hgrow="ALWAYS">
+               <content>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <VBox minHeight="-Infinity" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label fx:id="titleLabel" text="Title" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="descriptionLabel" text="description" textFill="WHITE" wrapText="true" />
+                              <Label fx:id="artistLabel" text="Artist:" textFill="WHITE" />
+                              <Label fx:id="publisherLabel" text="Publisher:" textFill="WHITE" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </content>
+            </ScrollPane>
+            <VBox alignment="TOP_RIGHT">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#close" style="-fx-background-color: transparent; -fx-border-width: 0; -fx-border-color: transparent;">
+                     <graphic>
+                        <FontIcon iconLiteral="fa-close" style="-fx-icon-color: white;" />
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </HBox>
+   </children>
+</StackPane>

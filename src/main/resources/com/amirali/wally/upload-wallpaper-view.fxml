@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox id="root" fx:id="root" alignment="TOP_CENTER" prefHeight="600.0" prefWidth="900.0" spacing="3.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.amirali.wally.ui.controllers.UploadWallpaperController">
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+   <children>
+      <TextField fx:id="titleTextField" maxHeight="-Infinity" maxWidth="-Infinity" promptText="Title">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <TextArea fx:id="description" maxWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" promptText="Description" wrapText="true" VBox.vgrow="ALWAYS">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextArea>
+      <HBox fx:id="hbox1" alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" spacing="3.0">
+         <children>
+            <Label fx:id="wallpaperPathLabel" maxWidth="1.7976931348623157E308" text="Wallpaper (Max: 50MB):" HBox.hgrow="ALWAYS" />
+            <Button fx:id="wallpaperPickButton" mnemonicParsing="false" onAction="#pickWallpaper" text="Pick">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+         </children>
+      </HBox>
+      <HBox fx:id="hbox2" alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" spacing="3.0">
+         <children>
+            <Label fx:id="thumbnailPathLabel" maxWidth="1.7976931348623157E308" text="Thumbnail (Max: 1MB):" HBox.hgrow="ALWAYS" />
+            <Button fx:id="thumbnailPickButton" mnemonicParsing="false" onAction="#pickThumbnail" text="Pick">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+         </children>
+      </HBox>
+      <HBox fx:id="hbox3" alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" spacing="3.0">
+         <children>
+            <Label fx:id="categoryLabel" maxWidth="1.7976931348623157E308" text="Category:" HBox.hgrow="ALWAYS" />
+            <ComboBox fx:id="categoryComboBox" prefWidth="150.0" />
+         </children>
+      </HBox>
+      <TextField fx:id="artistTextField" layoutX="15.0" layoutY="15.0" maxHeight="-Infinity" maxWidth="-Infinity" promptText="Artist">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <Button fx:id="uploadButton" mnemonicParsing="false" onAction="#upload" prefHeight="25.0" prefWidth="125.0" styleClass="default-button" text="Upload">
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </Button>
+   </children>
+</VBox>

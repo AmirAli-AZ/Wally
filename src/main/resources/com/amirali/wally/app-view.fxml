@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckMenuItem?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<BorderPane fx:id="root" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.amirali.wally.ui.controllers.AppController">
+   <center>
+      <Pagination fx:id="pagination" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </center>
+   <top>
+      <VBox fx:id="topPane" spacing="3.0" style="-fx-background-color: -fx-bg-color;" BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar>
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                        <MenuItem mnemonicParsing="false" onAction="#upload" text="Upload new wallpaper" />
+                        <MenuItem mnemonicParsing="false" onAction="#signin" text="Sign In" />
+                        <MenuItem mnemonicParsing="false" onAction="#refresh" text="Refresh" />
+                    <MenuItem mnemonicParsing="false" onAction="#close" text="Close">
+                           <accelerator>
+                              <KeyCodeCombination alt="UP" code="Q" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator>
+                        </MenuItem>
+                  </items>
+                </Menu>
+                  <Menu mnemonicParsing="false" text="View">
+                     <items>
+                        <CheckMenuItem fx:id="darkThemeCheckMenuItem" mnemonicParsing="false" onAction="#darkTheme" text="Dark theme" />
+                     </items>
+                  </Menu>
+              </menus>
+            </MenuBar>
+            <HBox alignment="CENTER">
+               <children>
+                  <StackPane>
+                     <children>
+                        <TextField id="searchField" fx:id="searchField" onKeyPressed="#search" prefWidth="300.0" promptText="Search" StackPane.alignment="CENTER">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <Button mnemonicParsing="false" onAction="#searchFilter" styleClass="icon-button" StackPane.alignment="CENTER_RIGHT">
+                           <graphic>
+                              <FontIcon iconLiteral="fa-arrow-down" />
+                           </graphic>
+                        </Button>
+                     </children>
+                  </StackPane>
+               </children>
+            </HBox>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </VBox>
+   </top>
+</BorderPane>

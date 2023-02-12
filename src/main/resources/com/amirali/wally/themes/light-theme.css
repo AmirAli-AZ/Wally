@@ -1,0 +1,273 @@
+* {
+    -fx-bg-color: white;
+    -fx-accent: #527DE0;
+}
+
+#root {
+    -fx-background-color: -fx-bg-color;
+}
+
+#window {
+    -fx-background-radius: 5px;
+    -fx-background-insets: 5px;
+    -fx-padding: 5px;
+    -fx-effect: dropshadow(three-pass-box, black, 10, 0, 0, 0);
+}
+
+.text-field {
+    -fx-background-color: -fx-bg-color;
+    -fx-background-radius: 5px;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-border-style: solid;
+    -fx-border-width: 1px;
+    -fx-border-color: lightgray;
+    -fx-border-radius: 5px;
+    -fx-prompt-text-fill: gray;
+}
+
+.text-area {
+    -fx-background-color: -fx-bg-color;
+    -fx-background-radius: 5px;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-border-style: solid;
+    -fx-border-width: 1px;
+    -fx-border-color: lightgray;
+    -fx-border-radius: 5px;
+    -fx-prompt-text-fill: gray;
+    -fx-background-insets: 0;
+}
+
+.text-area .content {
+    -fx-background-color: transparent;
+}
+
+.text-area .scroll-pane {
+    -fx-background-radius: 5px;
+}
+
+.button {
+    -fx-background-color: -fx-bg-color;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-background-radius: 3px;
+    -fx-border-style: solid;
+    -fx-border-color: lightgray;
+    -fx-border-radius: 3px;
+    -fx-border-width: 1px;
+    -fx-background-insets: 0;
+}
+
+.default-button {
+    -fx-background-color: -fx-accent;
+    -fx-text-fill: white;
+    -fx-border-color: #3465D9;
+}
+
+.context-menu {
+    -fx-background-color: -fx-bg-color;
+    -fx-background-radius: 3px;
+    -fx-border-width: 0.5px;
+    -fx-border-style: solid;
+    -fx-border-color: lightgray;
+    -fx-border-radius: 3px;
+}
+
+.hyperlink {
+    -fx-font-size: 16px;
+    -fx-border-color: transparent;
+    -fx-text-fill: -fx-accent;
+}
+
+.dialog-pane,
+.dialog-pane:header .header-panel {
+    -fx-background-color: -fx-bg-color;
+}
+
+.menu:hover > .label,
+.menu:showing > .label {
+    -fx-text-fill: white;
+}
+
+.menu-item:hover .label,
+.menu-item:selected .label,
+.menu-item:focused .label {
+    -fx-text-fill: white;
+}
+
+.menu-bar {
+    -fx-background-color: -fx-bg-color;
+}
+
+.check-menu-item {
+    -fx-mark-color: gray;
+    -fx-focused-mark-color: white;
+}
+
+.radio-menu-item {
+    -fx-mark-color: gray;
+    -fx-focused-mark-color: white;
+}
+
+.scroll-pane,
+.scroll-pane > .viewport,
+.scroll-pane .corner {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar,
+.scroll-bar .track-background,
+.scroll-bar .track,
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
+    -fx-background-color: -fx-bg-color;
+}
+
+.scroll-bar .increment-button .increment-arrow,
+.scroll-bar .decrement-button .decrement-arrow {
+    -fx-background-color: black;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: lightgray;
+    -fx-background-radius: 3px;
+}
+
+.combo-box {
+    -fx-background-color: -fx-bg-color;
+    -fx-background-radius: 5px;
+    -fx-border-color: lightgray;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+}
+
+.combo-box .list-cell {
+    -fx-background-radius: 5px;
+}
+
+.combo-box-popup .list-view {
+    -fx-background-color: -fx-bg-color;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-effect: dropshadow(three-pass-box, black, 5, 0, 0, 0);
+}
+
+.combo-box-popup .list-view .list-cell {
+    -fx-background-color: -fx-bg-color;
+    -fx-background-radius: 0px;
+    -fx-text-fill: black;
+    -fx-padding: 5px;
+    -fx-cursor: hand;
+}
+
+.combo-box-popup .list-view .list-cell:filled:selected,
+.combo-box-popup .list-view .list-cell:filled:selected:focused,
+.combo-box-popup .list-view .list-cell:filled:hover {
+    -fx-background-color: -fx-accent;
+    -fx-text-fill: white;
+}
+
+.combo-box .arrow-button {
+    -fx-cursor: hand;
+}
+
+.combo-box .arrow-button .arrow {
+    -fx-background-color: black;
+}
+
+.progress-bar,
+.progress-bar .track {
+    -fx-background-color: lightgray;
+    -fx-background-radius: 5px;
+}
+
+.progress-bar .bar {
+    -fx-background-radius: 5px;
+}
+
+.list-view {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-background-color: transparent;
+}
+
+.list-view .virtual-flow .corner {
+    -fx-background-color: transparent;
+}
+
+.list-cell {
+    -fx-background-color: transparent;
+}
+
+.list-cell:filled:selected:focused,
+.list-cell:filled:selected {
+    -fx-background-color: transparent;
+}
+
+#cell-root {
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-border-style: solid;
+    -fx-border-width: 1px;
+    -fx-border-color: lightgray;
+    -fx-margin: 15px;
+}
+
+.pagination .pagination-control .control-box .number-button {
+    -fx-background-color: -fx-bg-color;
+    -fx-background-radius: 5px;
+    -fx-border-style: solid;
+    -fx-border-radius: 3px;
+    -fx-border-color: lightgray;
+    -fx-border-width: 1px;
+    -fx-text-fill: black;
+}
+
+.pagination .pagination-control .control-box .number-button:selected {
+    -fx-background-color: -fx-accent;
+    -fx-text-fill: white;
+    -fx-border-color: #3465D9;
+    -fx-background-insets: 0;
+}
+
+.pagination .pagination-control .control-box .left-arrow-button,
+.pagination .pagination-control .control-box .right-arrow-button {
+    -fx-background-color: -fx-bg-color;
+    -fx-background-radius: 5px;
+    -fx-border-style: solid;
+    -fx-border-radius: 3px;
+    -fx-border-color: lightgray;
+    -fx-border-width: 1px;
+    -fx-text-fill: white;
+}
+
+.pagination .pagination-control .control-box .right-arrow-button .right-arrow,
+.pagination .pagination-control .control-box .left-arrow-button .left-arrow {
+    -fx-background-color: black;
+}
+
+.ikonli-font-icon {
+    -fx-icon-color: gray;
+    -fx-icon-size: 16px;
+}
+
+.icon-button {
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-background-color: transparent;
+}
+
+#download-button:hover .ikonli-font-icon {
+    -fx-icon-color: #4bc708;
+}
+
+#delete-button:hover .ikonli-font-icon {
+    -fx-icon-color: red;
+}
+
+#searchField {
+    -fx-background-radius: 180;
+    -fx-border-radius: 180;
+}
+

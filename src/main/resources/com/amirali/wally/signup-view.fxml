@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane id="root" fx:id="root" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.amirali.wally.ui.controllers.SignUpController">
+    <top>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label alignment="CENTER" maxWidth="1.7976931348623157E308" style="-fx-font-weight: bold;" text="Welcome To Wally" HBox.hgrow="ALWAYS">
+                    <font>
+                        <Font size="25.0" />
+                    </font>
+                </Label>
+            </children>
+        </HBox>
+    </top>
+    <center>
+        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="5.0" BorderPane.alignment="CENTER">
+            <children>
+                <TextField fx:id="usernameTextField" maxHeight="-Infinity" maxWidth="-Infinity" promptText="Username">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </TextField>
+                <PasswordField fx:id="passwordField" maxHeight="-Infinity" maxWidth="-Infinity" promptText="Password">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </PasswordField>
+            <TextField fx:id="emailTextField" layoutX="15.0" layoutY="147.0" maxHeight="-Infinity" maxWidth="-Infinity" promptText="Email">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="nameTextField" layoutX="15.0" layoutY="203.0" maxHeight="-Infinity" maxWidth="-Infinity" promptText="Name">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextField>
+                  <Button fx:id="signUpButton" mnemonicParsing="false" onAction="#signUp" prefHeight="25.0" prefWidth="125.0" styleClass="default-button" text="Sign Up">
+                      <font>
+                          <Font size="14.0" />
+                      </font>
+            </Button>
+            </children>
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </padding>
+        </VBox>
+    </center>
+    <bottom>
+        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+                <Hyperlink fx:id="signInLink" onAction="#signIn" text="Do you have an account?">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Hyperlink>
+            </children>
+        </HBox>
+    </bottom>
+</BorderPane>
