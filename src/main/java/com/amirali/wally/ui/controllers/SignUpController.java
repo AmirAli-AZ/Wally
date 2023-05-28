@@ -13,6 +13,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.security.NoSuchAlgorithmException;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -50,12 +51,13 @@ public class SignUpController implements Initializable {
                 Bindings.createBooleanBinding(
                         () ->
                                 usernameTextField.getText().isEmpty() ||
-                                        passwordField.getText().isEmpty() ||
+                                        passwordField.getText().isEmpty() || passwordField.getText().length() < 4 ||
                                         emailTextField.getText().isEmpty() ||
                                         nameTextField.getText().isEmpty() ||
                                         !isValidEmail(emailTextField.getText()),
                         usernameTextField.textProperty(),
                         passwordField.textProperty(),
+                        passwordField.textProperty().length(),
                         emailTextField.textProperty(),
                         nameTextField.textProperty()
                 )
@@ -63,10 +65,10 @@ public class SignUpController implements Initializable {
     }
 
     @FXML
-    void signUp(ActionEvent event) throws IOException {
+    void signUp(ActionEvent event) throws IOException, NoSuchAlgorithmException {
         var user = new User(
                 usernameTextField.getText(),
-                passwordField.getText(),
+                DBManager.hashPassword(passwordField.getText()),
                 nameTextField.getText(),
                 emailTextField.getText(),
                 List.of()

@@ -14,6 +14,11 @@
     -fx-effect: dropshadow(three-pass-box, black, 10, 0, 0, 0);
 }
 
+#topPane {
+    -fx-background-color: -fx-bg-color;
+    -fx-effect: dropshadow(three-pass-box, black, 3, 0, 0, 0);
+}
+
 .text-field {
     -fx-background-color: -fx-bg-color;
     -fx-background-radius: 5px;

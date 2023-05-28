@@ -29,7 +29,7 @@
       <HBox fx:id="hbox1" alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" spacing="3.0">
          <children>
             <Label fx:id="wallpaperPathLabel" maxWidth="1.7976931348623157E308" text="Wallpaper (Max: 50MB):" HBox.hgrow="ALWAYS" />
-            <Button fx:id="wallpaperPickButton" mnemonicParsing="false" onAction="#pickWallpaper" text="Pick">
+            <Button fx:id="wallpaperPickButton" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#pickWallpaper" text="Pick">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
@@ -38,7 +38,7 @@
       <HBox fx:id="hbox2" alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" spacing="3.0">
          <children>
             <Label fx:id="thumbnailPathLabel" maxWidth="1.7976931348623157E308" text="Thumbnail (Max: 1MB):" HBox.hgrow="ALWAYS" />
-            <Button fx:id="thumbnailPickButton" mnemonicParsing="false" onAction="#pickThumbnail" text="Pick">
+            <Button fx:id="thumbnailPickButton" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#pickThumbnail" text="Pick">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>

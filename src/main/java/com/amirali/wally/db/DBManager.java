@@ -19,9 +19,13 @@ import org.bson.types.Binary;
 import org.bson.types.ObjectId;
 
 import java.io.*;
+import java.math.BigInteger;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.*;
 import java.util.function.Consumer;
 
@@ -77,13 +81,28 @@ public final class DBManager {
         var users = getUserCollection();
         var userDocument = new Document();
         userDocument.put("username", user.getUsername());
-        userDocument.put("password", user.getPassword());
+        try {
+            userDocument.put("password", hashPassword(user.getPassword()));
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException(e);
+        }
         userDocument.put("name", user.getName());
         userDocument.put("email", user.getEmail());
         userDocument.put("uploadedWallpapers", user.getUploadedWallpapers());
 
         users.insertOne(userDocument);
         return true;
+    }
+
+    public static String hashPassword(String actualPassword) throws NoSuchAlgorithmException {
+        var msgDigest = MessageDigest.getInstance("SHA-256");
+        var bigint = new BigInteger(1, msgDigest.digest(actualPassword.getBytes(StandardCharsets.UTF_8)));
+        var sb = new StringBuilder(bigint.toString(16));
+
+        while (sb.length() < 32)
+            sb.insert(0, '0');
+
+        return sb.toString();
     }
 
     public Optional<User> getUser(String username) {

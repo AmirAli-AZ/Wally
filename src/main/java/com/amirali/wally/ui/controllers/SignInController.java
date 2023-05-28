@@ -11,6 +11,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.security.NoSuchAlgorithmException;
 import java.util.ResourceBundle;
 
 public class SignInController implements Initializable {
@@ -35,11 +36,15 @@ public class SignInController implements Initializable {
         usernameTextField.prefWidthProperty().bind(root.widthProperty().multiply(85).divide(100));
         passwordField.prefWidthProperty().bind(root.widthProperty().multiply(85).divide(100));
 
-        signInButton.disableProperty().bind(usernameTextField.textProperty().isEmpty().or(passwordField.textProperty().isEmpty()));
+        signInButton.disableProperty().bind(
+                usernameTextField.textProperty().isEmpty().
+                        or(passwordField.textProperty().isEmpty()).
+                        or(passwordField.textProperty().length().lessThan(4))
+        );
     }
 
     @FXML
-    void signIn(ActionEvent event) throws IOException {
+    void signIn(ActionEvent event) throws IOException, NoSuchAlgorithmException {
         var user = DBManager.getInstance().getUser(usernameTextField.getText());
         if (user.isEmpty()) {
             new Alert(Alert.AlertType.ERROR, "Username doesn't exist", ButtonType.OK)
@@ -47,7 +52,7 @@ public class SignInController implements Initializable {
             return;
         }
 
-        if (!user.get().getPassword().equals(passwordField.getText())) {
+        if (!user.get().getPassword().equals(DBManager.hashPassword(passwordField.getText()))) {
             new Alert(Alert.AlertType.ERROR, "Password is incorrect", ButtonType.OK)
                     .showAndWait();
             return;

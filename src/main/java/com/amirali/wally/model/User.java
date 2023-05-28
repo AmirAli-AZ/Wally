@@ -2,8 +2,7 @@ package com.amirali.wally.model;
 
 import org.bson.types.ObjectId;
 
-import java.io.*;
-import java.util.Base64;
+import java.io.Serializable;
 import java.util.List;
 
 public class User implements Serializable {
@@ -58,23 +57,5 @@ public class User implements Serializable {
 
     public void setUploadedWallpapers(List<ObjectId> uploadedWallpapers) {
         this.uploadedWallpapers = uploadedWallpapers;
-    }
-
-    @Serial
-    private void writeObject(ObjectOutputStream oos) throws IOException {
-        oos.writeUTF(getUsername());
-        oos.writeUTF(Base64.getEncoder().encodeToString(getPassword().getBytes()));
-        oos.writeUTF(getEmail());
-        oos.writeUTF(getName());
-        oos.writeObject(getUploadedWallpapers());
-    }
-
-    @Serial
-    private void readObject(ObjectInputStream ois) throws ClassNotFoundException, IOException {
-        setUsername(ois.readUTF());
-        setPassword(new String(Base64.getDecoder().decode(ois.readUTF())));
-        setEmail(ois.readUTF());
-        setName(ois.readUTF());
-        setUploadedWallpapers(((List<ObjectId>) ois.readObject()));
     }
 }
