@@ -46,7 +46,7 @@
                   <Font size="16.0" />
                </font>
             </TextField>
-                  <Button fx:id="signUpButton" mnemonicParsing="false" onAction="#signUp" prefHeight="25.0" prefWidth="125.0" styleClass="default-button" text="Sign Up">
+                  <Button fx:id="signUpButton" defaultButton="true" mnemonicParsing="false" onAction="#signUp" prefHeight="25.0" prefWidth="125.0" styleClass="default-button" text="Sign Up">
                       <font>
                           <Font size="14.0" />
                       </font>
